@@ -6,6 +6,8 @@
 
 - hosts: all
 
-  tasks: 
-    - name: Set up and deploy the proxmox-nodes to control virtual servers
-      ping:  
+# simple ping to test hosts
+- name: Test if server responds
+  hosts: all
+  roles:
+    - server_responding      

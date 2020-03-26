@@ -1,0 +1,5 @@
+---
+# file: roles/server_responding/main.yml
+tasks: 
+  - name: Set up and deploy the proxmox-nodes to control virtual servers
+    ping:
