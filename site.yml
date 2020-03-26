@@ -1,0 +1,11 @@
+---
+# file: site.yml
+
+# run like: ansible-playbook -i inventory --limit basement site.yml
+# see https://unix.stackexchange.com/questions/113754/allow-user1-to-su-user2-without-password
+
+- hosts: all
+
+  tasks: 
+    - name: Set up and deploy the proxmox-nodes to control virtual servers
+      ping:  
