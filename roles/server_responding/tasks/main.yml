@@ -1,0 +1,7 @@
+---
+# file: roles/server_responding/main.yml
+- name:
+  debug:
+    msg: "Are we live?"
+- name: Set up and deploy the proxmox-nodes to control virtual servers
+  ping:

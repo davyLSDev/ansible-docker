@@ -4,16 +4,17 @@
 # Testing
 - name: Debug package variable
   debug: 
-  msg: "This is the package {{ item }}"
+    msg: "This is the package {{ item }}"
   with_items: "{{ package }}"
-  verbosity: 5
 
 # Install software
 - name: Install software
   pacman:
-    name: "{{ item }}"
+    update_cache: yes
+    name: "{{ package }}"
     state: present
-  with_items: "{{ package }}"
+  become: true 
+# Deprecated  with_items: "{{ package }}"
   
 # Start service:
 

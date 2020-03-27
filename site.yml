@@ -1,16 +1,16 @@
 ---
 # file: site.yml
 
-# run like: ansible-playbook -i inventory --limit basement site.yml
+# run like: ansible-playbook -b -i inventory --limit basement site.yml
 # see https://unix.stackexchange.com/questions/113754/allow-user1-to-su-user2-without-password
 
 - hosts: all
 
 # simple ping to test hosts
-- name: Test if server responds
+- name: See the server's configuration
   hosts: all
   roles:
-    - server_responding
+    - server_settings    
 
 - name: Set up docker machines
   hosts: docker
