@@ -1,5 +1,5 @@
 ---
-# file: group_vars/docker_machine/main.yml
+# file: group_vars/docker/main.yml
 
 # packages to install
 package:

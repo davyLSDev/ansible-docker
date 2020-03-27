@@ -10,4 +10,9 @@
 - name: Test if server responds
   hosts: all
   roles:
-    - server_responding      
+    - server_responding
+
+- name: Set up docker machines
+  hosts: docker
+  roles:
+    - common   

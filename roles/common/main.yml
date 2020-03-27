@@ -1,0 +1,20 @@
+---
+# file: roles/common/main.yml
+
+# Testing
+- name: Debug package variable
+  debug: 
+  msg: "This is the package {{ item }}"
+  with_items: "{{ package }}"
+  verbosity: 5
+
+# Install software
+- name: Install software
+  pacman:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ package }}"
+  
+# Start service:
+
+# Enable service:
