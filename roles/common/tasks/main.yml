@@ -17,5 +17,20 @@
 # Deprecated  with_items: "{{ package }}"
   
 # Start service:
+- name: Start services
+  systemd:
+    state: started
+#    name: "{{ start_services }}"
+# [WARNING]: The value ['docker'] (type list) in a string field was converted to "['docker']" (type string). If this does not look like what you expect, quote the entire value to
+# ensure it does not change.
+# fatal: [basement]: FAILED! => {"changed": false, "msg": "This module does not currently support using glob patterns, found '[' in service name: ['docker']"}
+    name: "{{ item }}"
+  with_items: "{{ start_services }}"
 
 # Enable service:
+- name: Enable services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    masked: no
+  with_items: "{{ enable_services }}"   

@@ -10,3 +10,7 @@
 * [one guide on using become](https://stackoverflow.com/questions/56233250/how-can-i-install-package-on-client-machine-using-ansible)
 * [a guide for pw-less user for sudo](https://serverfault.com/questions/160581/how-to-setup-passwordless-sudo-on-linux)
 * also, the playbook needs to have the clause "become: true"
+
+## with_items
+
+This is deprecated but note some modules, such as "systemd" choke on using 'globs', so you need to specify with items. The example to see is roles/common/tasks/main.yml

@@ -4,3 +4,11 @@
 # packages to install
 package:
   - docker
+
+# services to start
+start_services:
+  - docker
+
+# services to enable
+enable_services:
+  - docker
